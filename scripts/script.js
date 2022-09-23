@@ -8,7 +8,6 @@ const listaProductos = [];
 
 let Productos = [
     {
-      "id": 1,
       "nombre": "Silla Simple",
       "categoria": "Sillas",
       "descripcion": "Silla de plastico",
@@ -17,7 +16,6 @@ let Productos = [
       "valor": 5000
     },
     {
-        "id": 2,
         "nombre": "Silla con funda",
         "categoria": "Sillas",
         "descripcion": "Silla de madera con funda color a elección",
@@ -26,7 +24,6 @@ let Productos = [
         "valor": 7500
     },
     {
-        "id": 3,
         "nombre": "Sofa un cuerpo",
         "categoria": "Sofas",
         "descripcion": "Sofa de ratán Largo:80cm Ancho:80cm",
@@ -88,6 +85,7 @@ function agregarProductos(){
 
 function main(){
     menu();   
+    agregarElementos();
  }
 
 
@@ -149,6 +147,22 @@ function menu(){
       }
 }
 
+//Esta funcion nos permite agregar los elementos en modo lista.
+function agregarElementos(){ 
+    var lista=document.getElementById("contenedor-productos"); 
+    Productos.forEach(function(data,index){
+    var linew= document.createElement("li");    
+    var contenido = document.createTextNode(data.nombre + " " + data.categoria);
+    lista.appendChild(linew);
+    linew.appendChild(contenido);
+    
+    })
+    }
+ //Fin funcion agregaElementos()
+
+
+
 
 
 main();
+
